@@ -17,7 +17,7 @@ export default function SingleProduct() {
 	return (
 		<div className="single-product">
 			<div className="single-product-container">
-				<img src={product.image} />
+				<img src={product.image} alt="single product image" />
 			</div>
 			<div>
 				<h2>{product.title}</h2>
