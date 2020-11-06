@@ -228,6 +228,7 @@ hr {
 .single-product {
 	display: flex;
 	padding-top: 75px;
+
 	justify-content: center;
 }
 
@@ -236,7 +237,7 @@ hr {
 }
 
 .single-product-container {
-	padding: 100px 20px;
+	padding: 150px 60px;
 }
 
 .single-product h2 {
