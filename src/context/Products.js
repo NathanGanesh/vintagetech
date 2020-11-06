@@ -56,7 +56,7 @@ export default function ProductsProvider({ children }) {
 			let newProducts = [ ...products ].sort((a, b) => a.price - b.price);
 			const { search, category, shipping, price } = filters;
 			// console.log(filters);
-			console.log(products);
+
 			//
 			if (category !== 'all') {
 				newProducts = newProducts.filter((item) => item.category === category);

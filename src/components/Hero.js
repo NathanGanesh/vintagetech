@@ -8,7 +8,7 @@ export default function Hero() {
 			<div className="hero">
 				<h2>Think, Code, Deploy</h2>
 				<h3>Embrace your choices - we do</h3>
-				<Button text={'our products'} width={'250px'} heigth={'60px'} fontSize={'26px'} />
+				<Button text={'our products'} width={'250px'} heigth={'60px'} fontSize={'26px'} link="/products" />
 			</div>
 		</div>
 	);

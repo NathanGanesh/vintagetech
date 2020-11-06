@@ -224,3 +224,37 @@ hr {
 	margin: auto;
 	border-top: 0.5px solid orange;
 }
+
+.single-product {
+	display: flex;
+	padding-top: 75px;
+	justify-content: center;
+}
+
+.single-product img {
+	width: 500px;
+}
+
+.single-product-container {
+	padding: 100px 20px;
+}
+
+.single-product h2 {
+	font-size: 3rem;
+	padding: 20px 0px;
+}
+
+.single-product h3 {
+	color: #f15025;
+	font-size: 2rem;
+	padding: 20px 0px;
+}
+
+.single-product p {
+	font-size: 1.5rem;
+	width: 600px;
+}
+
+.add-to-cart {
+	padding-top: 20px;
+}

@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export default function Button({ text, width, heigth, fontSize }) {
+export default function Button({ text, width, heigth, fontSize, link }) {
 	return (
 		<div>
-			<Link className="main-link" to="/products">
+			<Link className="main-link" to={`${link}`}>
 				<Button2 width={width} heigth={heigth} fontSize={fontSize}>
 					{text}
 				</Button2>
