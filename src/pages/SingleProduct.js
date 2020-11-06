@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductContext } from '../context/Products';
-
+import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import Button from '../components/Button';
 export default function SingleProduct() {

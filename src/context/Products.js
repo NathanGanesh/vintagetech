@@ -46,7 +46,7 @@ export default function ProductsProvider({ children }) {
 			setSorted(paginate(products));
 			setFeatured(featured);
 			setProducts(products);
-			setLoading(false);
+			// setLoading(false);
 		});
 		return () => {};
 	}, []);
