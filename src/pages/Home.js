@@ -6,7 +6,7 @@ export default function Home() {
 	return (
 		<div>
 			<Hero />
-			<h2 style={{ textAlign: 'center' }}>Featured products</h2>
+			<h2 className="search-product">Featured products</h2>
 			<FeaturedProducts />
 		</div>
 	);

@@ -180,7 +180,6 @@ li {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	padding: 50px;
 }
 
 .filter-wrapper {
@@ -193,8 +192,9 @@ li {
 
 .search-product {
 	text-align: center;
-	padding-top: 50px;
-	font-size: 3rem;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	font-size: 2.5rem;
 }
 
 .inputWrapper {
@@ -211,4 +211,16 @@ input[type="radio"] {
 .price-group p {
 	padding-left: 10px;
 	font-size: 22px;
+}
+
+.total-products {
+	text-align: center;
+	font-size: 22px;
+	margin-bottom: 40px;
+}
+
+hr {
+	width: 50%;
+	margin: auto;
+	border-top: 0.5px solid orange;
 }

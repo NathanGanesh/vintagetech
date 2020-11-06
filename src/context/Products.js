@@ -55,6 +55,8 @@ export default function ProductsProvider({ children }) {
 		() => {
 			let newProducts = [ ...products ].sort((a, b) => a.price - b.price);
 			const { search, category, shipping, price } = filters;
+			// console.log(filters);
+			console.log(products);
 			//
 			if (category !== 'all') {
 				newProducts = newProducts.filter((item) => item.category === category);
@@ -88,7 +90,9 @@ export default function ProductsProvider({ children }) {
 	);
 
 	return (
-		<ProductContext.Provider value={{ loading, products, featured, updateFilters, filters, page }}>
+		<ProductContext.Provider
+			value={{ loading, products, featured, updateFilters, filters, page, sorted, changePage }}
+		>
 			{children}
 		</ProductContext.Provider>
 	);

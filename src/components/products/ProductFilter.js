@@ -3,7 +3,7 @@ import { ProductContext } from '../../context/Products';
 
 export default function ProductFilter() {
 	const { filters: { search, category, shipping, price }, updateFilters, sorted } = useContext(ProductContext);
-
+	console.log(sorted);
 	return (
 		<section>
 			<form className="filter-section">
@@ -54,6 +54,8 @@ export default function ProductFilter() {
 					</label>
 				</div>
 			</form>
+			<h6 className="total-products">Total Products : {sorted.flat().length} </h6>
+			<hr />
 		</section>
 	);
 }

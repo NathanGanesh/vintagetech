@@ -4,10 +4,10 @@ import { ProductContext } from '../../context/Products';
 import ProductList from '../ProductList';
 
 export default function ProductsItems() {
-	const { loading, products } = React.useContext(ProductContext);
+	const { loading, sorted, page } = React.useContext(ProductContext);
 	if (loading) {
 		return <Loading />;
 	}
 
-	return <ProductList products={products} />;
+	return <ProductList products={sorted[page]} />;
 }

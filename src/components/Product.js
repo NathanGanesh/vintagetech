@@ -5,7 +5,7 @@ export default function Product({ info }) {
 	return (
 		<article className="product-article">
 			<div className="img-container">
-				<img src={info.image} alt="image" />
+				<img src={info.image} alt="ok" />
 
 				<button className="btn-detail">
 					<Link to={`product/${info.id}`} className="main-link">
