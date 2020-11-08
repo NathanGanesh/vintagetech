@@ -5,7 +5,7 @@ import ProductList from '../ProductList';
 
 export default function FeaturedProducts() {
 	const { loading, featured } = React.useContext(ProductContext);
-
+    
 	if (loading) {
 		return <Loading />;
 	}

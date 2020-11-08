@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
+import CartLink from './home/CartLink';
 
 export default function Navbar() {
 	return (
@@ -23,9 +24,7 @@ export default function Navbar() {
 					<Link className="main-link" to="/login">
 						<li>Login</li>
 					</Link>
-					<Link className="main-link" to="/cart">
-						<li>Cart</li>
-					</Link>
+					<CartLink />
 				</ul>
 			</div>
 		</nav>
