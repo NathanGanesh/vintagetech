@@ -343,3 +343,72 @@ hr {
 	display: inline-block;
 	text-align: center;
 }
+
+.signWrapper label {
+	display: block;
+	padding: 10px;
+}
+
+.loginWrapper h2 {
+	text-align: center;
+	font-size: 2rem;
+	padding: 50px 0;
+}
+
+.formWrapper {
+	margin: auto;
+	background: whitesmoke;
+	width: 40rem;
+}
+
+.field-description {
+	text-align: center;
+	padding: 12px 0px;
+}
+
+.signWrapper input {
+	width: 95%;
+	background: whitesmoke;
+	border: none;
+	border-bottom: 2px solid var(--darkGrey);
+	margin-bottom: 1.25rem;
+
+	padding: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.signWrapper {
+	margin-left: 5%;
+}
+
+.field-description p {
+	padding: 8px 10px;
+}
+
+.form-empty {
+	color: var(--mainRed);
+}
+
+.register-link button {
+	background: transparent;
+	color: var(--mainRed);
+	font-size: 1rem;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-submit {
+	padding: 3px;
+	color: white;
+	font-size: 1rem;
+	background: var(--primaryColor);
+	border: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 1.3rem;
+	margin: auto;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+}
