@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-
+import registerUser from '../strapi/registerUser';
+import loginUser from '../strapi/loginUser';
 export default function Login() {
 	const history = useHistory();
 	const [ email, setEmail ] = React.useState('');
@@ -14,13 +15,25 @@ export default function Login() {
 		e.preventDefault();
 		setIsMember((prevMember) => {
 			let isMember = !prevMember;
-			console.log(isMember);
+
 			isMember ? setUsername('default') : setUsername('');
 			return isMember;
 		});
 	};
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
+		console.log(isMember);
+		let response;
+		if (isMember) {
+			response = await loginUser({ email, password });
+		} else {
+			response = await registerUser({ email, password, username });
+		}
+		if (response) {
+			console.log('succes');
+			console.log(response);
+		} else {
+		}
 	};
 
 	return (
@@ -30,16 +43,21 @@ export default function Login() {
 				<div>
 					<div className="signWrapper">
 						<label htmlFor="email">Email</label>
-						<input name="email" onChange={(e) => setEmail(e.target.value)} />
+						<input name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 					</div>
 					<div className="signWrapper">
 						<label htmlFor="password">Password</label>
-						<input name="password" onChange={(e) => setPassword(e.target.value)} />
+						<input
+							type="password"
+							name="password"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
 					</div>
 					{!isMember && (
 						<div className="signWrapper">
 							<label htmlFor="username">Username</label>
-							<input name="username" onChange={(e) => setUsername(e.target.value)} />
+							<input name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
 						</div>
 					)}
 
