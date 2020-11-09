@@ -10,6 +10,7 @@ import SingleProduct from './pages/SingleProduct';
 import Error from './components/Error';
 import Login from './pages/Login.js';
 import Alert from './components/Alert';
+import Checkout from './components/Checkout';
 
 export default class App extends Component {
 	render() {
@@ -21,6 +22,7 @@ export default class App extends Component {
 					<Route exact path="/" component={Home} />
 					<Route exact path="/cart" component={Cart} />
 					<Route exact path="/login" component={Login} />
+					<Route exact path="/checkout" component={Checkout} />
 					<Route exact path="/about" component={About} />
 					<Route exact path="/product/:id" component={SingleProduct} />
 					<Route exact path="/products" component={Product} />

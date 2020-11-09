@@ -25,9 +25,9 @@ export default function Cart() {
 				<h2 style={{ paddingBottom: '20px' }}>Total : $ {total}</h2>
 
 				{user ? (
-					<Button text={'checkout'} width={'250px'} heigth={'60px'} fontSize={'26px'} link="/checkout" />
+					<Button text={'Login'} width={'500px'} heigth={'60px'} fontSize={'26px'} link="/login" />
 				) : (
-					<Button text={'Login'} width={'250px'} heigth={'60px'} fontSize={'26px'} link="/login" />
+					<Button text={'checkout'} width={'500px'} heigth={'60px'} fontSize={'26px'} link="/checkout" />
 				)}
 			</div>
 		</div>

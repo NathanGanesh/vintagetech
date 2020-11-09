@@ -5,14 +5,14 @@ import loginUser from '../strapi/loginUser';
 import { UserContext } from '../context/user';
 
 export default function Login() {
-	const { user, userLogin, userLogout, showAlert } = React.useContext(UserContext);
+	const { user, userLogin, userLogout, showAlert, alert } = React.useContext(UserContext);
 	const history = useHistory();
 	const [ email, setEmail ] = React.useState('');
 	const [ password, setPassword ] = React.useState('');
 	const [ username, setUsername ] = React.useState('default');
 	const [ isMember, setIsMember ] = React.useState(true);
 
-	let isEmpty = !email || !password || !username;
+	let isEmpty = !email || !password || !username || alert.show;
 
 	const toggleMember = (e) => {
 		e.preventDefault();
@@ -28,7 +28,7 @@ export default function Login() {
 			msg: 'accessing user data. please wait...'
 		});
 		e.preventDefault();
-		console.log(isMember);
+
 		let response;
 		if (isMember) {
 			response = await loginUser({ email, password });
@@ -41,12 +41,12 @@ export default function Login() {
 			const newUser = { token, username };
 			userLogin(newUser);
 			showAlert({
-				msg: `you are logged in : ${username}. shop away my friend`
+				msg: `You are logged in : ${username}. shop away my friend`
 			});
 			history.push('/products');
 		} else {
 			showAlert({
-				msg: 'there was an error. please try again...',
+				msg: 'There was an error. please try again...',
 				type: 'danger'
 			});
 		}
