@@ -1,12 +1,14 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import CartLink from './home/CartLink';
 import { UserContext } from '../context/user';
+import { CartContext } from '../context/cart';
 
 export default function Navbar() {
 	const { user, userLogout } = React.useContext(UserContext);
-	console.log(user);
+	const { clearCart } = React.useContext(CartContext);
+	const history = useHistory();
 	return (
 		<nav className="main-nav-bar">
 			<img src={logo} alt="img" className="main-logo" />
@@ -34,7 +36,16 @@ export default function Navbar() {
 							<li>login</li>
 						</Link>
 					) : (
-						<li onClick={userLogout}>logout</li>
+						<li
+							style={{ cursor: 'pointer' }}
+							onClick={() => {
+								userLogout();
+								clearCart();
+								history.push('/login');
+							}}
+						>
+							logout
+						</li>
 					)}
 
 					<CartLink />

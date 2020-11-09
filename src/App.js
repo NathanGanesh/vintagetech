@@ -11,6 +11,7 @@ import Error from './components/Error';
 import Login from './pages/Login.js';
 import Alert from './components/Alert';
 import Checkout from './components/Checkout';
+import PrivateRoute from './components/PrivateRoute';
 
 export default class App extends Component {
 	render() {
@@ -22,7 +23,9 @@ export default class App extends Component {
 					<Route exact path="/" component={Home} />
 					<Route exact path="/cart" component={Cart} />
 					<Route exact path="/login" component={Login} />
-					<Route exact path="/checkout" component={Checkout} />
+					<PrivateRoute path="/checkout" name="john" msg="hello">
+						<Checkout />
+					</PrivateRoute>
 					<Route exact path="/about" component={About} />
 					<Route exact path="/product/:id" component={SingleProduct} />
 					<Route exact path="/products" component={Product} />
