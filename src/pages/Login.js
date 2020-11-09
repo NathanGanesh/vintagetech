@@ -2,7 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import registerUser from '../strapi/registerUser';
 import loginUser from '../strapi/loginUser';
+import { UserContext } from '../context/user';
+
 export default function Login() {
+	const { user, userLogin, userLogout, showAlert } = React.useContext(UserContext);
 	const history = useHistory();
 	const [ email, setEmail ] = React.useState('');
 	const [ password, setPassword ] = React.useState('');
@@ -15,24 +18,37 @@ export default function Login() {
 		e.preventDefault();
 		setIsMember((prevMember) => {
 			let isMember = !prevMember;
-
 			isMember ? setUsername('default') : setUsername('');
 			return isMember;
 		});
 	};
+
 	const handleSubmit = async (e) => {
+		showAlert({
+			msg: 'accessing user data. please wait...'
+		});
 		e.preventDefault();
 		console.log(isMember);
 		let response;
 		if (isMember) {
 			response = await loginUser({ email, password });
+			userLogin(response);
 		} else {
 			response = await registerUser({ email, password, username });
 		}
 		if (response) {
-			console.log('succes');
-			console.log(response);
+			const { jwt: token, user: { username } } = response.data;
+			const newUser = { token, username };
+			userLogin(newUser);
+			showAlert({
+				msg: `you are logged in : ${username}. shop away my friend`
+			});
+			history.push('/products');
 		} else {
+			showAlert({
+				msg: 'there was an error. please try again...',
+				type: 'danger'
+			});
 		}
 	};
 

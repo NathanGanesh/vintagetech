@@ -412,3 +412,56 @@ hr {
 	display: flex;
 	justify-content: center;
 }
+
+.alert {
+	position: fixed;
+	width: 250px;
+	text-align: center;
+	height: 125px;
+	background: green;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	opacity: 0;
+}
+
+.alert p {
+	color: white;
+	padding-top: 10px;
+}
+
+.alert-close {
+	border: none;
+	background: transparent;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.alert-close {
+	color: var(--mainWhite);
+	font-size: 1.5rem;
+	background: transparent;
+	border: none;
+	display: inline-block;
+	position: absolute;
+	top: 5px;
+	right: 7px;
+	cursor: pointer;
+	line-height: 0;
+}
+
+.alert-show {
+	opacity: 1;
+}
+
+.alert-danger {
+	background: red;
+}
+.alert-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}

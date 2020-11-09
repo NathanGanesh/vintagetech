@@ -9,12 +9,14 @@ import Product from './pages/Product';
 import SingleProduct from './pages/SingleProduct';
 import Error from './components/Error';
 import Login from './pages/Login.js';
+import Alert from './components/Alert';
 
 export default class App extends Component {
 	render() {
 		return (
 			<BrowserRouter>
 				<NavBar />
+				<Alert />
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/cart" component={Cart} />

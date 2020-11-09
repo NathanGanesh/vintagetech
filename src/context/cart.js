@@ -1,7 +1,7 @@
 // cart context
 import React from 'react';
 import reducer from './reducer';
-import localCart from '../utils/localCart';
+import Alert from '../components/Alert';
 
 function getCartFromLocalStorage() {
 	return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
